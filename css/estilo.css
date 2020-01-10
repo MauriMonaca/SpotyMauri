@@ -1,0 +1,1385 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	text-decoration: none;
+	list-style: none;
+	font-family: 'Roboto', sans-serif;
+	font-size: 10px;
+	color: #EEE;
+}
+
+/*fuentes posibles: garamond, helvetica,futura, 
+bickham, trajan, myriad, franklin, futuramano*/
+
+body {
+	background-color: #1D1920;
+	position: relative;
+}
+
+#flag, .random-button2, .marca, .arrow {
+	display: none;
+}
+
+.mostrar-menu {
+	width: 2em;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 2em 0 0 1em;
+	position: absolute;
+	z-index: 20;
+	top: -1em;
+	left: 0em;
+	cursor: pointer;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    transition: all .25s;
+    background-image: url("../img/recital.jpg");
+    background-position: 50% 100%;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+#menu a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: #4DD956;
+    font-size: 2em;
+    padding: 1em 0 1em 1.5em;
+    width: auto;
+    transition: all .4s;
+    text-shadow: 0 0 5px  #4DD956;
+}
+
+#menu a:hover {
+    transition: background .25s;
+    background: #444;
+    opacity: .6;
+    color: #00FF00;
+    font-weight: bolder;
+    text-decoration: underline;
+    border-bottom: 1px groove rgba(256,256,256,.8);	
+}
+
+.marca2 {
+	align-items: center;		
+	background-color: #222;
+	display: flex;
+	height: 7%;
+	justify-content: flex-start;
+	margin: 0 3em;
+	opacity: .8;
+	width: 80.6%;
+	z-index: 30;
+}
+
+.logo2 {
+	align-self: flex-start;	
+	box-shadow: border-box;
+	height: 50%;
+	margin-left: 2.5em;
+	width: 4.5em;
+}
+
+.logo2 img {
+	width: 70%;
+	height: auto;
+	padding: .5em 0 0 0;
+}
+		
+.spot2 {
+	width: 20%;
+	align-self: flex-start;
+	margin-top: 1.2em;
+}
+
+.spot2 h2 {
+	color: white;
+	font-family: 'Heebo', sans-serif;
+	font-size: 	1.9em;
+	font-weight: bolder;
+	letter-spacing: .1em;
+}
+
+.mostrar-settings {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	justify-content: space-between;
+	margin: 2em 0 0 1em;
+	position: absolute;
+	right: 1em;
+	top: -1.2em;
+	transition: all .3s;
+	width: 1em;
+	z-index: 90;
+}
+
+
+#settings {
+	position: fixed;
+    top: 3.5em;
+    right: -35em;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    width: 18em;
+    height: auto;
+    transition: all .3s;
+    background-color: #1D1920;
+    height: auto;
+    width: 40vw;
+    border: 1px solid #EEE;
+    opacity: .7em;
+}
+
+#settings a {
+	font-size: 1.5em;
+	padding: 1em;
+}
+
+#settings a:hover {
+	text-decoration: underline;
+}
+
+.mostrar-settings:hover + #settings {
+	right: 0;
+}
+
+#flag:checked + article,
+#flag:checked + .content1,
+#flag:checked ~ #menu {
+    transform: translateX(100vw);
+}
+
+#flag:checked ~ .label {
+	position: relative;
+	z-index: 60;
+	transition: all .25s;
+}
+
+#flag:checked + .label .raya {
+	background-color: #50D850;	
+}
+
+#menu .opciones {
+	margin: 0em 3em 0;
+}
+
+.raya, .punto, .point {
+	background-color: #EEE;	
+}
+
+.raya {
+    width: 1.5em;
+    height: .3em;
+    margin: .2em auto;
+	border-radius: 20%;
+}
+
+.punto, .point {
+   	width: .4em;
+    height: .4em;
+    margin: .2em auto;
+	border-radius: 50%;
+	position: relative;
+}
+
+.content1 {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	z-index: 10;
+}
+
+article {
+    background: linear-gradient(to right,#413229,
+	#6D5245 ,#967462,#9D7B6A,#C5A289 50%,
+	#826254 70%,#574339 92%,#4F4234);	
+	clear: both;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0 auto;
+	width: 100%;
+	height: 60vh;
+	padding-top: 2em;
+	position: relative;
+	z-index: 9;
+}	
+
+#artista-foto {
+	background-image: url("../img/daft.jpg");
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	clip-path: circle(50%);
+	margin: 1em auto 2.5em;
+	min-height: 14.1em;
+	min-width: 	14.1em;
+	transition: .4s;
+}
+
+#artista-foto:hover {
+	min-height: 16em;
+	min-width: 	16em;
+}
+
+#artista-foto:hover + #artista-name {
+	margin-bottom: 2vh;
+}
+
+#artista-foto:hover + #artista-followers {
+	margin-top: 1vh;
+}
+
+#artista-foto:hover + .random-button {
+	margin-top: 1em;
+}
+
+#artista-name {
+	color: #DED;
+	font-size: 1.5em;
+	font-weight: 900;
+	margin: 2vh auto 4vh;
+}
+
+#artista-follow {
+	border-radius: 2em;
+	border: 1px solid #EEE;
+	cursor: pointer;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	margin: 0vh auto 3vh;
+	padding: .5vh 1em;
+}
+
+#artista-followers {
+	color: #DED;
+	font-size: 1.2em;
+	font-weight: 600;
+	margin: 2vh auto 0;
+}
+
+.random-button {
+	align-items: center;
+	background-color: #547403;
+	border-radius: 5em;
+	border: 1px solid #547403;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: flex;
+	font-size: 1.6em;
+	font-weight: 600;
+	height: 6.2vh;
+	justify-content: center;
+	margin: 6vh auto 2em;
+	padding: 1em 1.4em;
+	text-align: center;
+	width: 14em;
+}
+
+.random-button .play {
+	outline: 1px solid white;
+	background: white;
+	width: 1.2em;
+	height: 1.2em;
+	transform: rotate(-45deg) scale(1.2);
+	clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.random-text {
+	font-family: Verdana;
+	font-size: .8em;
+	font-weight: 600;
+	margin-left: 1em;
+	color: #DED;
+}
+
+.conexion {
+	display: flex;
+	justify-content: space-between;
+	margin: 7vh 3em 2vh;
+}
+
+#disponibilidad {
+	font-size: 1.4em;
+	font-weight: 600;
+	color: #DED;
+}
+
+#selector {
+	height: auto;
+}
+
+.checkbox {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+}
+
+.checkbox input {
+    display: none;
+}
+
+.check {
+ 	height: 80%;
+   	transition: all .4s;
+    background-color: #eee;
+    border-radius: 3em;
+    border: 3px solid #BBB;
+    width: 3.5em;
+}
+
+.checkbox input:checked ~ .check {
+    border: 3px solid darkolivegreen;
+}
+
+.check .rueda {
+    background-color: grey;
+    border-radius: 50%;
+    height: 100%;
+    transform: scale(1.2);
+    transition: all .4s;
+    width: 1.5em;
+}
+
+.checkbox input:checked ~ .check .rueda {
+    transform: translateX(2em) scale(1.2);
+    background-color: limegreen;
+}
+
+.albumes {
+	 margin: 4vh 2em 0;
+	 display: flex;
+	 flex-direction: column;
+}
+
+.albumes h3 {
+	text-transform: uppercase;
+	font-size: 1.2em;
+	color: grey;
+	opacity: .8;
+	margin-bottom: .5vh;
+}
+
+.albumes hr {
+	border: 1px solid rgba(100,100,100,.8);
+}
+
+.album {
+	display: flex;
+	justify-content: space-between;
+	margin: 1vh 0 0;
+	width: 100%;
+}
+
+.nombre-album {
+	font-size: 1.4em;
+	font-weight: bold;
+	color: #DED;
+	align-self: center;
+}
+
+.menu-album {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	justify-content: space-between;
+	margin: 0 1em 0 0;
+	width: 1em;
+}
+
+.playlist{
+	margin: 4vh 0 0 0;
+	height: 4.9em;
+	width: 100%;
+	background: linear-gradient(to right,#413229,
+		#6D5245 ,#967462,#9D7B6A,#C5A289 50%,
+		#826254 70%,#574339 92%,#4F4234);
+	display: grid;
+	grid-template-columns: 20% 1fr 30%;
+	grid-template-rows: 50% 50%;
+	grid-gap: 1vh;
+}
+
+.tapa-album {
+	grid-row: span 2;
+	width: 5em;
+	height: 100%;
+}
+
+.tapa-album img {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+.play-cancion {
+	color: #DDD;
+	font-size: 1.6em;
+	font-weight: 600;
+	justify-self: start;
+	letter-spacing: .052em;
+	margin: .5em 0;
+}
+
+.play-artist {
+	color: #CCC;
+	opacity: .8em;
+	font-size: 1.2em;
+	margin-bottom: 1em;
+	justify-self: start;
+}
+
+.play-icon {
+	height: 3em;
+	grid-row: span 2;
+	padding: .5em;
+	align-self: center;
+	margin-bottom: .5em;
+}
+
+.play-icon img {
+	filter: invert(100%);
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+}
+
+/*__________________________________*/
+	/*MOBILES MAS GRANDES EN PORTRAIT*/
+
+@media (min-height: 520px)  {
+			
+			* {
+				font-size: 9.5px;
+			}
+		}	
+
+@media (min-height: 550px)  {
+			
+			* {
+				font-size: 10px;
+			}
+		}
+
+@media (min-height: 550px) and
+		(min-width: 340px)  {
+			
+			* {
+				font-size: 11px;
+			}
+		}
+
+/*__________________________________*/
+
+@media (min-height: 620px)  {
+			
+			* {
+				font-size: 11.5px;
+			}
+		}
+
+/*__________________________________*/
+
+@media (min-height: 660px)  {
+			* {
+				font-size: 11.9px;
+			}
+		} 
+
+/*__________________________________*/
+
+@media (min-height: 710px)  {
+			
+			* {
+				font-size: 13.2px;
+			}
+		} 
+
+/*__________________________________*/
+
+@media (min-height: 790px)  {
+			
+			* {
+				font-size: 14.5px;
+			}
+		} 
+
+/*__________________________________*/
+
+@media (min-height: 820px)  {
+			
+			* {
+				font-size: 14.9px;
+			}
+		} 
+
+/*__________________________________*/
+
+@media 	(min-height: 840px) and
+		(min-width: 470px)  {
+			* {
+				font-size: 15.4px;
+			}
+		}
+
+/*_________TABLETS EN PROTRAIT________*/		
+ @media 	(min-height: 890px) and
+			(min-width: 550px) {
+			
+			* {
+				font-size: 17px;
+			}
+			
+
+			.playlist {
+				margin: 2.5em auto;
+				width: 90%;
+			}
+		}
+
+/*__________________________________*/
+
+@media 	(min-height: 1000px) and
+		(min-width: 550px) {
+			* {
+				font-size: 18px;
+			}
+		}	
+
+/*__________________________________
+/*A PARTIR DE AQUI SE LE AGREGA EL MENU*/
+
+
+@media 	(min-width: 700px) and
+		(min-height: 1100px) {
+			* {
+				font-size: 18.5px;
+			}
+
+			.mostrar-menu, 
+			.mostrar-settings,
+			.marca2 {
+				display: none;
+			}
+
+			#menu {
+			    background-image: none;
+				background-color: #1D1920;
+			    height: 2.3em;
+			    left: 0;
+			    position: fixed;
+			    top: 0;
+			    transition: all .25s;
+			    width: 100vw;
+			    z-index: 50;
+			}
+			
+			#menu .opciones {
+				display: flex;
+				justify-content: flex-start;
+				margin: 0;
+				height: 100%;
+			}
+
+			#menu a {
+			    font-size: .9em;
+			    font-weight: 600;
+			    line-height: 1.5em;
+			    padding: 0em .4em 0;
+			    text-align: center;
+			    width: 100%;
+			    border-right: 1px solid #AAA;
+				margin: .5em 0;
+			}
+
+			#menu a:last-child {
+				padding-right: 1em;
+				border-right: none;
+			}
+
+			#menu a:hover {
+				border-right: 1px solid #EEE;
+				background: none;
+			}
+			
+			#menu a:last-child:hover {
+				border-right: none;
+			}
+
+			#artista-foto {
+				margin-top: 6em;
+			}
+
+			#artista-foto:hover {
+				transform: translateY(-1em);
+				margin-bottom: .5em;
+			}
+
+			#artista-foto:hover + #artista-name {
+				margin: .5em auto;
+			}
+
+			#artista-foto:hover + #artista-followers {
+				margin-top: 1em;
+			}
+
+			#artista-foto:hover + .random-button {
+				margin-top: .6em;
+			}
+
+			#artista-name, 
+			#artista-follow,
+			#artista-followers {
+				margin: .9em auto;
+			}
+
+			.random-button {
+				margin-top: 2em;
+			}
+
+			.marca {
+				align-items: center;		
+				display: flex;
+				justify-content: flex-end;
+				position: absolute;
+				left: 36vw;
+				top: 4.5em;
+				width: 30%;
+				z-index: 30;
+			}
+
+			.logo {
+				width: 25%;
+			}
+
+			.marca .logo img{
+				width: 100%;
+			}
+
+			.spot {
+				margin-left: .7em;
+				width: 80%;
+			}
+
+			.spot h2 {
+				font-size: 1.6em;
+				color: #111;
+				font-family: 'Heebo', sans-serif;
+			}
+
+			.arrow {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				position: fixed;
+				right: 0;
+				top: 5vh;
+				width: 1.5em;
+				height: 4.5em;
+				background: #111;
+				z-index: 40;
+				border-radius: 1.2em 0 0 1.2em;
+				padding: 0 .7em 0em;
+				border-width: 1px 1px 1px 0px;
+				border-color: #EEE;
+				border-style: solid;
+				overflow: hidden;
+				transition: all .4s;
+				box-shadow: inset 1px 0;
+			}
+
+			.arrow span {
+				color: #4DD956;
+				font-size: 5em;	
+				height: 100%
+				outline: 1px solid white;	
+				transform: translateX(-.05em) translateY(-.05em) scaleY(1.7);
+				align-self: flex-start;
+			}
+
+			#settings {
+				position: fixed;
+			    top: 4vh;
+			    right: -25em;
+			    z-index: 50;
+			    display: flex;
+			    flex-direction: column;
+			    width: 18em;
+			    height: auto;
+			    transition: all .4s;
+			    background-color: #1D1920;
+			    height: auto;
+			    width: 30vw;
+			    border: 1px solid #EEE;
+			    opacity: .7em;
+			    font-size: .8em;
+			}
+
+			.arrow:hover ~ #settings {
+				right: 0em;
+			}
+	}
+
+/*__________________________________*/
+
+@media 	(min-width: 700px) and
+		(min-height: 1240px)  and
+		(orientation: portrait){
+			* {
+				font-size: 21px;
+			}
+
+			#artista-foto {
+				margin-bottom: .5em;
+			}
+
+			.random-button {
+				margin-top: 1.5em;
+			}
+		}	
+
+/*__________________________________*/
+
+@media 	(min-width: 900px) and
+		(min-height: 1320px) and
+		(orientation: portrait){
+			* {
+				font-size: 23px;
+			}
+
+			#artista-name {
+				margin-top: 1em;
+			}
+
+			#artista-follow {
+				margin-top: 1.5em;
+			}
+
+			.random-button {
+				margin-top: .8em;
+			}
+		}			
+
+/*__________________________________*/
+	/*MOVILES EN LANDSCAPE*/
+
+@media (min-width: 500px) and 
+		(orientation: landscape) {
+
+	.content1 {
+		height: 50vh;
+		text-align: center;
+		background: none;
+		display: grid;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: 40vh 20vh 20vh 20vh;
+		grid-auto-flow: column;
+		grid-template-areas:
+		"art rand"
+		"art conn"
+		"art alb"
+		"art play";
+	}
+
+	.mostrar-menu {
+		position: absolute;
+		top: -.5em;
+		left: 0em;
+	}
+
+	#menu {
+		left: 0em;
+		top: -130vh;
+	}
+
+	#flag:checked + article,
+	#flag:checked + .content1,
+	#flag:checked ~ #menu {
+	    transform: translateY(130vh);
+	}
+
+	#menu .opciones {
+		margin: 3.6em 2.8em 3.6em 4em;
+		transition: all .5 1s;
+	}
+
+	#menu a:last-child {
+		margin-right: 13em;
+	}
+
+	#flag:checked ~ #menu .opciones {
+		border-top: 1px solid #4DD956;
+	}
+
+	#menu a {
+		font-size: 1.7em;
+		margin-left: 0em;
+	}
+	
+	.marca2 {
+		background: none;
+		bottom: 4em;
+		justify-content: flex-end;
+		position: absolute;
+		right: 9em;
+		width: 30%;
+		}
+
+	.logo2 {
+		width: 20%;
+		height: 50%;
+		align-self: flex-start;	
+		}
+
+	.logo2 img {
+		width: 100%;
+		height: auto;
+		padding: .5em 0 0 0;
+		}
+			
+	.spot2 {
+		width: 20%;
+		align-self: flex-start;
+		margin: 1.5em .5em 0;
+		}
+
+	.spot2 h2 {
+		color: #EEE;
+		font-family: 'Heebo', sans-serif;
+		font-size: 	1.9em;
+		letter-spacing: .1em;
+		}
+
+	.mostrar-settings {
+		position: absolute;
+		top: -.5em;
+		right: 1.5em;
+	}
+	
+	#settings {
+		margin: 2.4em 0;
+		width: 30vw;
+	}
+
+	article {
+		box-sizing: border-box;
+		grid-area: art;
+		height: 100vh;	
+		justify-content: center;
+		padding-top: 0;
+		text-align: center;
+		width: 100%;
+	}
+
+ 	#artista-foto{
+		margin: .5em auto 0;
+		min-height: 13em;
+		min-width: 13em;
+	}
+
+	#artista-name {
+		margin: 2em auto .5em;
+	}
+
+	#artista-follow {
+		font-size: 1.2em;
+		margin: 1em auto 0;
+		padding-top: .2em;
+	}
+
+	#artista-followers {
+		font-size: 1.2em;
+		margin: 2em 2em .4em;
+	}
+
+	.random-button {
+		display: none;	
+	}
+
+	.random-button2 {
+		align-items: center;
+		background-color: #547403;
+		border-radius: 20px;
+		border: 1px solid #BBB;
+		box-sizing: border-box;
+		cursor: pointer;
+		display: flex;
+		font-size: 1.6em;
+		font-weight: 600;
+		height: 6.2vh;
+		justify-content: center;
+		margin: 25vh auto;
+		padding: 1em 1.4em;
+		text-align: center;
+		width: 14em;
+	}
+
+	.random-button2:hover {
+		box-shadow: .05em .05em #888;
+	}
+
+	.conexion {
+		grid-area: conn;
+		width: 80%;
+		height: 50%;
+		margin: 1em auto 2em;
+		padding: .3em .7em;
+		justify-content: space-around;
+		align-items: center;
+		border: 1px solid #DDD;
+		border-radius: 3em;
+		box-shadow: .05em .05em;
+		justify-self: center;
+	}
+
+	#selector {
+		height: 1em;
+		transform: translateY(-.2em);
+	}
+
+	.check {
+		width: 3em;
+	}
+	
+	.check .rueda {
+		transform: scaleY(2);
+	}
+
+	.checkbox input:checked ~ .check .rueda {
+    	transform: translateX(1.6em) scaleY(2);
+	}
+
+	.albumes{
+		grid-area: alb;
+		margin: 0 auto;
+		width: 80%;
+		text-align: left;
+	}
+
+	.nombre-album {
+		font-size: 1.2em;
+	}
+
+	.playlist {
+		grid-area: play;
+		width: 90%;
+		height: 4.75em;
+		margin: 0 1em 0 1.5em;
+		border: 2px solid #DDD;
+		border-radius: 0 2em 2em 0;
+		position: relative;
+		z-index: 2;
+	}
+
+	.playlist img {
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+		width: 99%;
+	} 
+
+	.play-cancion {
+		margin-left: 1em;
+		justify-self: start;
+	}
+
+	.play-artist {
+		margin-left: 1.3em;
+		justify-self: start;
+	}
+
+	.marca {
+		position: absolute;
+		right: 8%;
+		top: 1em;
+		width: 30%;
+		display: flex;
+		align-items: center;		
+		z-index: 30;
+	}
+
+	.logo {
+		width: 30%;
+		height: auto;
+	}
+
+	.logo img {
+		width: 70%;
+	}
+		
+	.spot {
+		width: 20%;
+	}
+
+	.spot h2 {
+		color: #DDD;
+		font-family: 'Heebo', sans-serif;
+		font-size: 	1.5em;
+		letter-spacing: .1em;
+	}
+}  
+
+/*__________________________________*/
+
+@media (min-width: 550px) and
+		(min-height: 344px) and 
+		(orientation: landscape) {
+			* {
+				font-size: 11.2px;
+			}
+		}
+
+/*__________________________________*/
+
+@media (min-width: 650px) and
+		(min-height: 400px) and 
+		(orientation: landscape) {
+			* {
+				font-size: 13px;
+			}
+
+			.check .rueda {
+				transform: scaleY(1.8);
+			}
+
+	.checkbox input:checked ~ .check .rueda {
+    	transform: translateX(1.6em) scaleY(1.8);
+	}
+		}
+
+/*__________________________________*/
+  /*A PARTIR DE AQUI SE MUESTRA EL MENU*/
+
+@media (min-width: 780px) and
+		(min-height: 450px) and 
+		(orientation: landscape) {
+			
+			* {
+				font-size: 15px;
+			}
+
+			.mostrar-menu, 
+			.mostrar-settings,
+			.marca2{
+				display: none;
+			}
+
+			#menu {
+				position: fixed;
+			    height: 3.5em;
+			    top: 0em;
+			    left: 13em;
+			    transition: all .25s;
+			    width: auto;
+			    z-index: 50;
+			    border: 1px solid #EEE;
+			    border-width: 0 1px 1px 1px;
+			  	border-radius: 0 0 1em 1em;
+			  	background-image: none;
+				background-color: #1D1920;
+				overflow: hidden;
+			}
+			
+			#menu .opciones {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin: 0;
+				height: 100%;
+				width: 100%;
+				padding: 0 .2em;
+				border-top: none;
+				overflow: hidden;
+			}
+
+			#menu a {
+				position: static;
+				line-height: 1em;
+			    font-size: 1em;
+			    font-weight: 600;
+			    text-align: center;
+			    padding: 1em .5em;
+			    width: auto;
+			    margin: 0 auto;
+			   	border-right: 1px solid #AAA;
+				}
+
+			#menu a:first-child {
+				margin-left: .1em;
+			}
+
+
+			#menu a:last-child {
+				padding-right: .5em;
+				margin-right: .5em;
+				border-right: none;
+			}
+
+
+			#menu a:hover {
+				background: none;
+				border-right: 1px solid #EEE;
+				border-bottom: none;
+			}
+
+			#artista-foto {
+				margin: 3em auto;
+			}
+
+			#artista-name {
+				margin-top: 0em;
+			}
+
+			#artista-follow,
+			#artista-followers {
+				margin: .5em auto;
+			}
+
+			.marca {
+				align-items: center;		
+				display: flex;
+				position: absolute;
+				left: 2vw;
+				top: 1em;
+				width: 17vw;
+				z-index: 30;
+			}
+
+			.logo {
+				width: 20%;
+			}
+
+			.marca .logo img{
+				width: 100%;
+			}
+
+			.spot {
+				margin-left: .5em;
+				width: 80%;
+			}
+
+			.spot h2 {
+				font-size: 1.4em;
+				color: #111;
+			}
+
+			.arrow {
+				position: fixed;
+				display: flex;
+				right: 0;
+				top: 0vh;
+				width: 2em;
+				height: 4.5em;
+				background: #111;
+				z-index: 40;
+				border-radius: 1.2em 0 0 1.2em;
+				padding: 0 .7em 0em;
+				border-width: 1px 1px 1px 0px;
+				border-color: #EEE;
+				border-style: solid;
+				overflow: hidden;
+				transition: all .4s;
+			}
+
+			.arrow span {
+				color: #4DD956;
+				font-size: 4.5em;	
+				height: 100%
+				outline: 1px solid white;	
+				transform: translateX(-.05em) translateY(-.1em) scaleY(1.7);
+				align-self: flex-start;
+			}
+
+			.arrow:hover ~ #settings {
+				right: 0em;
+			}
+
+			#settings {
+				display: block;
+				right: -20em;
+			    top: 0;
+			    transition: all .4s;
+			    background-color: #1D1920;
+			    height: auto;
+			    width: 15vw;
+			    border: 1px solid #EEE;
+			    opacity: .7em;
+			    margin: 0;
+			}
+
+			#settings a{
+				display: block;
+				font-size: .8em;
+			}
+		}
+
+/*__________________________________*/
+		/*TABLETS EN LANDSCAPE*/
+
+@media (min-width: 880px) and
+		(min-height: 550px) and 
+		(orientation: landscape) {
+			
+			* {
+				font-size: 15.5px;
+			}
+
+			article {
+				justify-content: space-evenly;
+			}
+
+			#artista-name, 
+			#artista-follow,
+			#artista-followers {
+				margin-top: 0;
+			}
+
+			#menu {
+				left: 25vw;
+			}
+
+			#settings {
+				width: 8em;
+			}
+		}
+
+/*__________________________________*/
+
+@media (min-width: 980px) and
+		(min-height: 550px) and 
+		(orientation: landscape) {
+			* {
+				font-size: 18.5px;
+			}
+		}
+
+/*__________TABLET NOVA_________________*/
+/*AQUI EL MENU SE MUESTRA SIN HOVER*/
+
+@media (min-width: 1200px) and
+		(min-height: 600px) and 
+		(orientation: landscape) {
+
+			.random-button2 {
+				margin: 4em 11em 0 1em;
+				width: 65%;
+				padding: .9em;
+				justify-content: space-around;
+			}
+
+			.random-text {
+				font-size: .6em;
+			}
+
+			.conexion {
+				margin-top: .5em;
+			}
+			
+			.check {
+				height: 100%;
+				width: 3em;
+			}
+
+			.albumes, .playlist {
+				margin-top: .5em;
+			}
+
+			.arrow {
+				display: none;
+			}
+
+			#settings {
+				right: 0;
+				border-right: none;
+				border-top: none;
+			}
+
+			#settings a {
+				font-size: .9em;
+			}
+		}
+
+/*__________PC DESKTOP________________________*/
+
+@media (min-width: 1320px) and
+		(min-height: 635px) and 
+		(orientation: landscape) {
+				
+			* {
+				font-size: 19.5px;
+			}
+
+			body {
+				background-color: #EEE;
+			}
+
+			.content1 {
+				height: 100vh;
+				margin: 0 auto;
+				width: 85vw;
+				background: #1D1920;
+			}
+
+			#menu {
+				left: 30vw;
+			}
+			
+			#settings {
+				right: 7.5vw;
+			}
+
+			.random-button2 {
+				margin-left: 2em;
+				width: 60%;
+			}
+
+			#menu a{
+				text-align: center;
+			}
+}
+
+/*__________________________________*/
+
+@media (min-width: 1320px) and
+		(min-height: 1000px) and 
+		(orientation: landscape) {
+
+			* {
+				font-size: 23.5px;
+			}
+
+			.random-button2 {
+				margin-left: 1em;
+			}
+
+			#settings {
+				top: 7vw;
+				border-top: 1px solid white;
+			}
+}
+
+/*__________________________________*/
+
+@media (min-width: 1450px) and
+		(min-height: 950px) and 
+		(orientation: landscape) {
+			
+			* {
+				font-size: 27.5px;
+			}
+		}
